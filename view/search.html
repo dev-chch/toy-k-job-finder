@@ -1,0 +1,75 @@
+{{template "header".}}
+<section id="search">
+	<h4>{{.title}}</h4>
+	<form action="/search" method="get" class="toy-search-form">
+		<input type="text" name="keyword" value="{{.keyword}}" placeholder="검색어를 입력하세요.">
+		<input type="hidden" name="target" value="{{.target}}">
+		<button type="submit"><i class="fas fa-search"></i></button>
+	</form>
+	
+	{{if .status}}
+		<nav class="tab">
+			<a href="javascript:void(0)" data-target="saramin" {{if eq .target "saramin"}}class="current"{{end}}>사람인</a>
+			<a href="javascript:void(0)" data-target="jobkorea" {{if eq .target "jobkorea"}}class="current"{{end}}>잡코리아</a>
+			<a href="javascript:void(0)" data-target="indeed" {{if eq .target "indeed"}}class="current"{{end}}>인디드</a>
+			<a href="javascript:void(0)" data-target="incruit" {{if eq .target "incruit"}}class="current"{{end}}>인크루트</a>
+		</nav>
+		
+		<select name="target">
+			<option value="saramin">사람인</option>
+			<option value="jobkorea">잡코리아</option>
+			<option value="indeed">인디드</option>
+			<option value="jumpit">점핏</option>
+			<option value="incruit">인크루트</option>
+		</select>
+		
+		<!-- jobsList start -->
+		{{if .jobsList}}
+		<div class="breadcrumb">
+			<span class="total">전체 결과 : {{.jobsTotal}}건</span>
+			<div class="pagenation">
+				{{if .isShowPrevPage}}
+				<a href="{{.prevPage}}">◁</a>
+				{{end}}
+				{{if .isShowPageCount}}
+				<span class="currentPage">
+					{{.currentPage}} / {{.totalPage}}
+				</span>
+				{{end}}
+				{{if .isShowNextPage}}
+				<a href="{{.nextPage}}">▷</a>
+				{{end}}
+			</div>
+		</div>
+		
+		<ul class="saramin">
+			{{range .jobsList}}
+			<li>
+				<a href="{{.Link}}" target="_blank">
+					<span class="title" title="{{.Title}}">{{.Title}}</span>
+					<span class="condition" title="{{.Condition}}">{{.Condition}}</span>
+					<span class="corp" title="{{.Corp}}">{{.Corp}}</span>
+					<span class="date" title="{{.RegisteredDate}}">{{.RegisteredDate}}</span>
+				</a>
+			</li>
+			{{end}}
+		</ul>
+		
+		<div class="pagenation">
+			{{if .isShowPrevPage}}
+			<a href="{{.prevPage}}">◁</a>
+			{{end}}
+			{{if .isShowPageCount}}
+			<span class="currentPage">
+				{{.currentPage}} / {{.totalPage}}
+			</span>
+			{{end}}
+			{{if .isShowNextPage}}
+			<a href="{{.nextPage}}">▷</a>
+			{{end}}
+		</div>
+		{{end}} 
+		<!-- jobsList end -->
+	{{end}}
+</section>
+{{template "footer".}}

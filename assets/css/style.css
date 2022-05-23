@@ -1,0 +1,50 @@
+@charset "utf-8"; .ng-l { font-family: 'NanumGothicLight', sans-serif !important; } 
+html { background: #f0f0f1; } 
+body { margin: 0; } 
+body ul li { list-style: none; } 
+html, body, button, input, select, textarea div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { font-family: 'NanumGothicLight', sans-serif; text-decoration: none; box-sizing: border-box; color: #222; } 
+
+h1 { font-size: 54px; line-height: 64px; margin: 0; } 
+h2 { font-size: 45px; line-height: 55px; margin: 0; } 
+h3 { font-size: 32px; line-height: 42px; margin: 0; } 
+h4 { font-size: 24px; line-height: 34px; margin: 0; } 
+h5 { font-size: 18px; line-height: 28px; margin: 0; } 
+h6 { font-size: 16px; line-height: 26px; margin: 0; } 
+p { font-size: 14px; line-height: 24px; margin: 0; } 
+a { font-size: 14px; line-height: 24px; margin: 0; text-decoration: none; } 
+
+section { max-width: 1100px; margin: 50px auto; padding: 35px; border-radius: 10px; background: #fff; } 
+
+section .toy-search-form { display: flex; width: 100%; margin: 30px 0; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 0 10px 5px #f5f5f5;} 
+section .toy-search-form input[type=text] { width: 100%; padding: 15px 30px; border: none; border-right: none; border-radius: 5px 0 0 5px; font-size: 16px; outline: none; background: #ffffff; } 
+section .toy-search-form button[type=submit] { padding: 15px 30px; font-size: 17px; border: none; border-left: none; border-radius: 0 5px 5px 0; background: none; background: #fff; } 
+section .toy-search-form button[type=submit]:hover { cursor: pointer; } 
+
+section#home h3 { } 
+
+section#search nav { display: flex; flex-wrap: wrap; justify-content: space-between; } 
+section#search nav a { display: inline-block;padding: 15px 30px; background: #fff; color: #333; border: 1px solid #ddd; border-radius: 5px; font-weight: bold; font-size: 16px; } 
+section#search nav a:hover { color: #fff; background: #333; } 
+section#search nav a.current { color: #fff; background: #333; border: 1px solid #333; } 
+section#search select[name=target] { display: none; } 
+section#search .breadcrumb { display: flex; justify-content: space-between; padding: 20px 10px; margin: 20px 0 0 0; border-bottom: 2px solid #e7ded6; } 
+section#search .breadcrumb .total { display: flex; justify-content: flex-start; font-size: 14px; } 
+section#search ul { margin: 0 0 30px 0; padding: 0; display: flex; flex-wrap: wrap; border-bottom: 2px solid; } 
+section#search ul li { width: 50%; } 
+section#search ul li a { display: flex; flex-wrap: wrap; justify-content: space-between; padding: 15px 10px; border-bottom: 1px solid #eee; transition: 0.3s; } 
+section#search ul li a span { display: -webkit-box; display: -ms-flexbox; display: box; text-overflow: ellipsis; word-break:break-all; -webkit-box-orient:vertical; -webkit-line-clamp:1; overflow: hidden; } 
+section#search ul li a .title { width: 100%; font-size: 17px; line-height: 30px; font-weight: 600; } 
+section#search ul li a .condition { width: 100%; font-size: 15px; } 
+section#search ul li a .corp { width: 70%; color: #999; } 
+section#search ul li a .date { width: 30%; text-align: right; color: #999; } 
+section#search ul li a:hover { background: rgb(245 245 245); } 
+section#search .pagenation { text-align: right; font-size: 14px; } 
+section#search .pagenation a { } 
+section#search .pagenation span { } 
+
+footer { max-width: 1100px; margin: 20px auto; display: flex; flex-direction: column; align-items: center; } 
+
+@media screen and (max-width: 600px) {
+	section#search ul li { width: 100%; }
+	section#search nav a { width: 48%; margin: 0 0 5px 0; text-align: center; }
+}

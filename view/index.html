@@ -1,0 +1,10 @@
+{{template "header".}}
+<section id="home">
+	<h4>{{.title}}</h4>
+	<form action="/search" method="get" class="toy-search-form">
+		<input type="text" name="keyword" value="" placeholder="검색어를 입력하세요.">
+		<input type="hidden" name="target" value="saramin">
+		<button type="submit"><i class="fas fa-search"></i></button>
+	</form>
+</section>
+{{template "footer".}}
